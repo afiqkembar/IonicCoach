@@ -6,25 +6,35 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { GetCoachProvider } from '../providers/get-coach/get-coach';
+import { HttpModule } from '@angular/http';
+import { CoachListPage } from '../pages/coach-list/coach-list';
+import { CoachDetailPage} from '../pages/coach-detail/coach-detail';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    CoachListPage,
+    CoachDetailPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    CoachListPage,
+    CoachDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GetCoachProvider
   ]
 })
 export class AppModule {}

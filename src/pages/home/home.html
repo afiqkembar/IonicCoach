@@ -6,9 +6,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="card-background-page">
+
+  <ion-card *ngFor="let coach of coachCategory" (click)=itemTapped()>
+    <img src="{{coach.picURL}}">
+    <div class="card-title">{{coach.name}}</div>
+    <div class="card-subtitle">41 Listings</div>
+  </ion-card>
+
 </ion-content>
